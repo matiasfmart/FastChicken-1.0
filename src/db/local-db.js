@@ -409,6 +409,375 @@ const menus = [
     }
   ]
 
+  const combos = [
+    {
+      "type": "po",
+      "description": "1 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
+      "name": "Combo Uno",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 1
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "sd2": {
+          "id": "aren",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "po",
+      "description": "2 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
+      "name": "Combo Dos",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 2
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "sd2": {
+          "id": "aren",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "po",
+      "description": "3 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
+      "name": "Combo Tres",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 3
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "sd2": {
+          "id": "aren",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "po",
+      "description": "4 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
+      "name": "Combo Cuatro",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 4
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "sd2": {
+          "id": "aren",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "po",
+      "description": "8 Piezas de Pollo y 2 Papas",
+      "name": "Fast Chicken",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 8
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 2
+        },
+        "sd2": 0,
+        "dr": 0
+      }
+    },
+    {
+      "type": "po",
+      "description": "12 Piezas de Pollo y 3 Papas",
+      "name": "Super Fast Chicken",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 12
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 3
+        },
+        "sd2": 0,
+        "dr": 0
+      }
+    },
+    {
+      "type": "ot",
+      "description": "Crispy, Papas o Ensalada y Gaseosa",
+      "name": "Combo Crispy",
+      "stock": {
+        "md": {
+          "id": "po",
+          "count": 1
+        },
+        "sd1": {
+          "id": "paen",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "ot",
+      "description": "Nuggets, Papas o Ensalada y gaseosa",
+      "name": "Fast Nuggets",
+      "stock": {
+        "md": {
+          "id": "nu",
+          "count": 1
+        },
+        "sd1": {
+          "id": "paen",
+          "count": 1
+        },
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "ot",
+      "description": "Popcorns, Papas o Ensalada y Gaseosa",
+      "name": "Combo Popcorns",
+      "stock": {
+        "md": {
+          "id": "pc",
+          "count": 1
+        },
+        "sd1": {
+          "id": "paen",
+          "count": 1
+        },
+        "sd2": 0,
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Pollo, Papas y Gaseosa",
+      "name": "Fast Burger",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 1
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "le",
+            "count": 1
+          },
+          {
+            "id": "to",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Pollo, Bacon y Jamon, Papas y Gaseosa",
+      "name": "Chicken Burger",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 1
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "le",
+            "count": 1
+          },
+          {
+            "id": "to",
+            "count": 1
+          },
+          {
+            "id": "bc",
+            "count": 1
+          },
+          {
+            "id": "ja",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Carne, Bacon y Cheddar, Papas y Gaseosa",
+      "name": "Simple Bacon",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 1
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "bc",
+            "count": 1
+          },
+          {
+            "id": "ch",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Carne, Cheddar y Lechuga, Papas y Gaseosa",
+      "name": "Simple Cheddar",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 1
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "le",
+            "count": 1
+          },
+          {
+            "id": "ch",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Carne, Bacon y Cheddar, Papas y Gaseosa",
+      "name": "Doble Bacon",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 2
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "bc",
+            "count": 1
+          },
+          {
+            "id": "ch",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "bg",
+      "description": "Hamburguesa de Carne, Cheddar y Lechuga, Papas y Gaseosa",
+      "name": "Doble Cheddar",
+      "stock": {
+        "md": {
+          "id": "bg",
+          "count": 2
+        },
+        "sd1": {
+          "id": "pa",
+          "count": 1
+        },
+        "mix": [
+          {
+            "id": "bc",
+            "count": 1
+          },
+          {
+            "id": "ch",
+            "count": 1
+          }
+        ],
+        "dr": {
+          "id": "cc",
+          "count": 1
+        }
+      }
+    }
+  ]
+
   export const getData = new Promise(res=>{
-    res(menus)
+    res(combos)
   })

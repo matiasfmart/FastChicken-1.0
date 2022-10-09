@@ -8,17 +8,8 @@ export const Menu = ({menuData}) => {
               <h5 className=''>{menuData.name}</h5>
               <div className="row">
                 <div className="col-12">
-                  <small><label>{menuData.mainDish} {menuData.sideDishOne} {menuData.sideDishTwo} {menuData.drink}.</label></small>
+                  <h6 className='text-muted'><small>{menuData.description}</small></h6>
                 </div>
-                {/* <div className="col-6">
-                  <small><label>{menuData.sideDishOne}</label></small>
-                </div>
-                <div className="col-6">
-                  <small><label>{menuData.sideDishTwo}</label></small>
-                </div>
-                <div className="col-6">
-                  <small><label>{menuData.drink}</label></small>
-                </div> */}
               </div>
             </div>
         </button>
