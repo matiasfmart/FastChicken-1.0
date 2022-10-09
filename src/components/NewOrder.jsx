@@ -6,7 +6,7 @@ export const NewOrder = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-8 p-5">
+        <div className="col-8 p-4">
             <MenuList />
         </div>
         <div className="col-4 border-start">
