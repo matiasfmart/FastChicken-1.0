@@ -4,47 +4,29 @@ export const cartContext = createContext();
 
 function Provider({ children }) {
 
-    const [stock, setStock] = useState([]);
-    const [orderItem, setOrderItem] = useState([]);
+    const [orderItems, setOrderItems] = useState([]);
 
-    const addToCart = (product, count) => {
-        if (existInCart(product.id)) {
+    function addItemMenu(item){
+        if(exist(item.id)){
             console.log('El item ya existia');
-            const indexItem = cart.findIndex(ele => ele.item.id === product.id);
-            cart[indexItem].count = cart[indexItem].count + count;
-            setCart([...cart]);
-            console.log(cart);
+            const indexItem = orderItems.findIndex(e => e.id === item.id);
+            orderItems[indexItem].count = orderItems[indexItem].count + 1;
+            setOrderItems([...orderItems]);
         }else{
-            console.log(`Se agrego ${product.title}`);
-            setCart([...cart, { item: product, count: count }]);
+            setOrderItems([...orderItems, { id: item.id, name: item.name, count: 1 }]);
         }
     }
 
-    const totalOrder = () => {
-        return cart.reduce((a, b) => a + (b.item.price * b.count), 0)
+    function getItemsMenu(){
+        return orderItems;
     }
 
-    const deleteItem = (id) => {
-        const updatedCart = cart.filter(element => element.item.id !== id)
-        setCart(updatedCart);
-    }
-
-    const existInCart = (id) => {
-        return cart.some(e => e.item.id === id);
-    }
-
-    const clearCart = () => {
-        setCart([])
-    }
-
-    const totalItems = () => {
-        if (cart) {
-            return cart.reduce(((a, b) => a += b.count), 0);
-        }
+    function exist(id){
+        return orderItems.some(e => e.id === id);
     }
 
     return( 
-        <cartContext.Provider value={{ cart, addToCart, clearCart, deleteItem, totalItems, totalOrder }}>
+        <cartContext.Provider value={{ addItemMenu, getItemsMenu }}>
             {children}
         </cartContext.Provider>
     )

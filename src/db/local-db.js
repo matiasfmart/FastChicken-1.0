@@ -411,6 +411,7 @@ const menus = [
 
   const combos = [
     {
+      "id": 1,
       "type": "po",
       "description": "1 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
       "name": "Combo Uno",
@@ -434,6 +435,7 @@ const menus = [
       }
     },
     {
+      "id": 2,
       "type": "po",
       "description": "2 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
       "name": "Combo Dos",
@@ -457,6 +459,7 @@ const menus = [
       }
     },
     {
+      "id": 3,
       "type": "po",
       "description": "3 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
       "name": "Combo Tres",
@@ -480,6 +483,7 @@ const menus = [
       }
     },
     {
+      "id": 4,
       "type": "po",
       "description": "4 Pieza de Pollo, Papas, Arroz o Ensalada y Gaseosa",
       "name": "Combo Cuatro",
@@ -503,6 +507,7 @@ const menus = [
       }
     },
     {
+      "id": 5,
       "type": "po",
       "description": "8 Piezas de Pollo y 2 Papas",
       "name": "Fast Chicken",
@@ -520,6 +525,7 @@ const menus = [
       }
     },
     {
+      "id": 6,
       "type": "po",
       "description": "12 Piezas de Pollo y 3 Papas",
       "name": "Super Fast Chicken",
@@ -537,6 +543,7 @@ const menus = [
       }
     },
     {
+      "id": 7,
       "type": "ot",
       "description": "Crispy, Papas o Ensalada y Gaseosa",
       "name": "Combo Crispy",
@@ -556,6 +563,7 @@ const menus = [
       }
     },
     {
+      "id": 8,
       "type": "ot",
       "description": "Nuggets, Papas o Ensalada y gaseosa",
       "name": "Fast Nuggets",
@@ -575,6 +583,7 @@ const menus = [
       }
     },
     {
+      "id": 9,
       "type": "ot",
       "description": "Popcorns, Papas o Ensalada y Gaseosa",
       "name": "Combo Popcorns",
@@ -595,6 +604,7 @@ const menus = [
       }
     },
     {
+      "id": 10,
       "type": "bg",
       "description": "Hamburguesa de Pollo, Papas y Gaseosa",
       "name": "Fast Burger",
@@ -624,6 +634,7 @@ const menus = [
       }
     },
     {
+      "id": 11,
       "type": "bg",
       "description": "Hamburguesa de Pollo, Bacon y Jamon, Papas y Gaseosa",
       "name": "Chicken Burger",
@@ -661,6 +672,7 @@ const menus = [
       }
     },
     {
+      "id": 12,
       "type": "bg",
       "description": "Hamburguesa de Carne, Bacon y Cheddar, Papas y Gaseosa",
       "name": "Simple Bacon",
@@ -690,6 +702,7 @@ const menus = [
       }
     },
     {
+      "id": 13,
       "type": "bg",
       "description": "Hamburguesa de Carne, Cheddar y Lechuga, Papas y Gaseosa",
       "name": "Simple Cheddar",
@@ -719,6 +732,7 @@ const menus = [
       }
     },
     {
+      "id": 14,
       "type": "bg",
       "description": "Hamburguesa de Carne, Bacon y Cheddar, Papas y Gaseosa",
       "name": "Doble Bacon",
@@ -748,6 +762,7 @@ const menus = [
       }
     },
     {
+      "id": 15,
       "type": "bg",
       "description": "Hamburguesa de Carne, Cheddar y Lechuga, Papas y Gaseosa",
       "name": "Doble Cheddar",

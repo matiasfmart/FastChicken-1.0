@@ -28,7 +28,7 @@ export const MenuList = () => {
         <div className="row">
           {
             menus.map((item) => (
-              <Menu menuData={item} key={item.name}/>
+              <Menu menuData={item} key={item.name} />
             ))
           }
         </div>

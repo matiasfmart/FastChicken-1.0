@@ -3,6 +3,7 @@ import { MenuList } from "./MenuList";
 import { OrderDetail } from "./OrderDetail";
 
 export const NewOrder = () => {
+
   return (
     <div className="container">
       <div className="row">
