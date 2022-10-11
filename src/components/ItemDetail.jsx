@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ItemDetail = (orderItem) => {
+export const ItemDetail = ({orderItem}) => {
 
   console.log(orderItem);
 
