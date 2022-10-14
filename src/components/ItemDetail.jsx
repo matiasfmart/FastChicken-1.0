@@ -2,8 +2,6 @@ import React from 'react'
 
 export const ItemDetail = ({orderItem}) => {
 
-  console.log(orderItem);
-
   return (
     <li className="list-group-item">
         <div className="container">
