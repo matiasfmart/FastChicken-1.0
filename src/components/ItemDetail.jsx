@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { cartContext } from "../context/Provider";
 
 export const ItemDetail = ({orderItem}) => {
+
+  const { deleteItem } = useContext(cartContext);
+
+  function deleteItemMenu(){
+    deleteItem(orderItem.id);
+  }
 
   return (
     <li className="list-group-item px-0">
@@ -12,8 +19,8 @@ export const ItemDetail = ({orderItem}) => {
               <div className="p-2"><button className='btn-addRemove btn btn-outline-primary'>+</button></div>
           </div>
           <div className="p-2"><label><b>${orderItem.price}</b></label></div>
-          <button className='btn btn-outline-danger'>
-            <i class="bi bi-trash3"></i>
+          <button className='btn btn-outline-danger' onClick={deleteItemMenu}>
+            <i className="bi bi-trash3"></i>
           </button>
       </div>
         {/* <div className="container">

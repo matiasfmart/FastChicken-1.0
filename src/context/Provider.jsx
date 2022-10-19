@@ -26,6 +26,15 @@ function Provider({ children }) {
     }
   }
 
+  const deleteItem = (id) => {
+    const updated = orderItems.filter(element => element.id !== id)
+    setOrderItems(updated);
+  }
+
+  function totalOrder(){
+    return orderItems.reduce((a, b) => a + (b.price * b.count), 0);
+  }
+
   function getItemsMenu() {
     return orderItems;
   }
@@ -35,7 +44,7 @@ function Provider({ children }) {
   }
 
   return (
-    <cartContext.Provider value={{ addItemMenu, getItemsMenu }}>
+    <cartContext.Provider value={{ addItemMenu, getItemsMenu, totalOrder, deleteItem }}>
       {children}
     </cartContext.Provider>
   );

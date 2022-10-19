@@ -38,13 +38,12 @@ export const Menu = ({menuData}) => {
       "drink": valueDrink,
       "price": menuData.price
     }
-    console.log(item);
     addItemMenu(item);
     handleClose();
   }
 
   return (
-    <div className="col-md-4 mt-4">
+    <div className="col-md-4 mb-4">
       <button className='btn-menu py-3 px-2 btn btn-outline-primary' type="button" onClick={handleShow}>
           <div className="container">
             <h5 className='title-menu'>{menuData.name}</h5>

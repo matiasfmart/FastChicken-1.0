@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ItemDetail } from "./ItemDetail";
 import { cartContext } from "../context/Provider";
 
 export const OrderDetail = () => {
-  const { getItemsMenu } = useContext(cartContext);
+  const { getItemsMenu, totalOrder } = useContext(cartContext);
 
   return (
-    <div className="container order-detail p-4 mx-4">
+    <div className="container order-detail p-4 mx-2">
       <div className="row mb-3">
         <h1>Pedido</h1>
       </div>
@@ -23,7 +23,7 @@ export const OrderDetail = () => {
             <h1>Total</h1>
           </div>
           <div className="p-2">
-            <h1>$1050</h1>
+            <h1>${totalOrder()}</h1>
           </div>
         </div>
         <button type="button" className="btn btn-primary btn-lg">
