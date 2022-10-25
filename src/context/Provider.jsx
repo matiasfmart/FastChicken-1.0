@@ -29,6 +29,9 @@ function Provider({ children }) {
   }
 
   function editItem(itemEdit){
+
+    debugger
+
     let aux = orderItems.filter(i => i.id != itemEdit.id);
     let newArray = [...aux, itemEdit]; 
     setOrderItems(newArray.sort((a,b)=>a.id-b.id));

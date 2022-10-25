@@ -15,7 +15,7 @@ export const MenuList = () => {
 
   //   obtenerDatos();
   // }, [])
-  const [menus, setMenus] = useState([]);
+  const [menus, setMenus] = useState();
 
   useEffect(()=>{
     getData.then(item => {
@@ -24,34 +24,49 @@ export const MenuList = () => {
   }, [])
   
   return (
-    <div className='container'>
-        <div className="row mb-3"> 
-          <h2 className='mb-2'>Pollos</h2>
-          <hr className='mb-4'/>
-          {
+    <div className='container' id="MenuListContainer">
+      <div className="row mb-3"> 
+        <h2 className='mb-2'>Pollos</h2>
+        <hr className='mb-4'/>
+        {
+          menus ? 
             menus.map((item) => (
               item.type == "po" && <Menu menuData={item} key={item.name} />
             ))
-          }
-        </div>
-        <div className="row mb-3"> 
-          <h2 className='mb-2'>Hamburguesas</h2>
-          <hr className='mb-4'/>
-          {
+          :
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+        }
+      </div>
+      <div className="row mb-3"> 
+        <h2 className='mb-2'>Hamburguesas</h2>
+        <hr className='mb-4'/>
+        {
+          menus ? 
             menus.map((item) => (
               item.type == "bg" && <Menu menuData={item} key={item.name} />
             ))
-          }
-        </div>
-        <div className="row mb-3"> 
-          <h2 className='mb-2'>Extras</h2>
-          <hr className='mb-4'/>
-          {
+          :
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>  
+        }
+      </div>
+      <div className="row mb-3"> 
+        <h2 className='mb-2'>Extras</h2>
+        <hr className='mb-4'/>
+        {
+          menus ?
             menus.map((item) => (
               item.type == "ex" && <Menu menuData={item} key={item.name} />
             ))
-          }
-        </div>
+          :
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+        }
+      </div>
     </div>
   );
 };

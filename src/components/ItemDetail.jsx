@@ -24,23 +24,50 @@ export const ItemDetail = ({orderItem}) => {
 
   function addItemEdit(){
 
-    const item = {
-      "id": orderItem.id,
-      "type": orderItem.type,
-      "name": orderItem.name,
-      "dish": valueDish,
-      "drink": valueDrink,
-      "price": orderItem.price
+    if(orderItem.type == "po") {
+      debugger
+      const itemPo = {
+        "id": orderItem.id,
+        "type": orderItem.type,
+        "name": orderItem.name,
+        "dish": valueDish,
+        "drink": valueDrink,
+        "price": orderItem.price
+      }
+      editItem(itemPo);
     }
-    editItem(item);
+
+    if(orderItem.type == "bg"){
+      const itemBg = {
+        "id": orderItem.id,
+        "type": orderItem.type,
+        "name": orderItem.name,
+        "drink": valueDrink,
+        "price": orderItem.price
+      }
+      editItem(itemBg);
+    }
+
+    if(orderItem.name == "Gaseosa"){
+      const itemDr = {
+        "id": orderItem.id,
+        "type": orderItem.type,
+        "name": orderItem.name,
+        "drink": valueDrink,
+        "price": orderItem.price
+      }
+      editItem(itemDr);
+    }
     handleClose();
     resetModalValues();
   }
 
-  function getEditItem(){
-    setValueDish(orderItem.dish);
-    setValueDrink(orderItem.drink);
-    handleShow();
+  function modalUpdateItem(){
+    if((orderItem.type != "ex") || (orderItem.name == "Gaseosa")){
+      setValueDish(orderItem.dish);
+      setValueDrink(orderItem.drink);
+      handleShow();
+    }
   }
   //#endregion
 
@@ -57,13 +84,18 @@ export const ItemDetail = ({orderItem}) => {
             <div className="row"><div className=""><label><b>${orderItem.price}</b></label></div></div>
           </div>
           <div className="container-fluid">
-            <div className="row justify-content-center">{orderItem.drink}</div>
             <div className="row justify-content-center">{orderItem.dish}</div>
+            <div className="row justify-content-center">{orderItem.drink}</div>
           </div>
           <div className="container-fluid d-flex justify-content-end">
-              <button className='btn btn-outline-success mx-1' onClick={getEditItem}>
-                <i className="bi bi-pencil-square"></i>
-              </button>
+            {
+              (orderItem.type != "ex") || (orderItem.name == "Gaseosa") ?
+                <button className='btn btn-outline-success mx-1' onClick={modalUpdateItem}>
+                  <i className="bi bi-pencil-square"></i>
+                </button>
+                :
+                <></>
+            }
               <button className='btn btn-outline-danger mx-1' onClick={deleteItemMenu}>
                 <i className="bi bi-trash3"></i>
               </button>
@@ -80,9 +112,6 @@ export const ItemDetail = ({orderItem}) => {
         valueDrink={valueDrink}
         item={orderItem}
       />
-      {/* {
-        showModal &&
-      } */}
     </>
   )
 }

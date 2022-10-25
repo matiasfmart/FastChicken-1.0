@@ -17,17 +17,24 @@ export const Menu = ({menuData}) => {
   const handleChangeDrink = (val) => setValueDrink(val)
   const handleChangeDish = (val) => setValueDish(val)
 
-  // useEffect(() => {
-  //   console.log(valueDrink);
-  //   console.log(valueDish);
-  // }, [valueDrink, valueDish])
-
-
   function handleClose(){
      setShowModal(false);
   };
 
-  function handleShow(){ setShowModal(true) };
+  function handleShow(){
+    if((menuData.type != "ex") || (menuData.name == "Gaseosa")){
+      setShowModal(true) 
+    }else{
+      const extraItem = {
+        "id": menuData.id,
+        "type": menuData.type,
+        "name": menuData.name,
+        "dish": menuData.description,
+        "price": menuData.price
+      }
+      addItemMenu(extraItem);
+    }
+  };
 
   function addItem(){
     const item = {
@@ -56,19 +63,16 @@ export const Menu = ({menuData}) => {
           </div>
       </button>
 
-      {
-        showModal &&
-          <ModalMenu
-            addItem={addItem}
-            handleClose={handleClose}
-            handleChangeDrink={handleChangeDrink}
-            handleChangeDish={handleChangeDish}
-            showModal={showModal}
-            valueDish={valueDish}
-            valueDrink={valueDrink}
-            item={menuData}
-          />
-      }
+      <ModalMenu
+        addItem={addItem}
+        handleClose={handleClose}
+        handleChangeDrink={handleChangeDrink}
+        handleChangeDish={handleChangeDish}
+        showModal={showModal}
+        valueDish={valueDish}
+        valueDrink={valueDrink}
+        item={menuData}
+      />
     </div>
   )
 }

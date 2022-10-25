@@ -58,3 +58,8 @@
 .btn-addRemove{
   border-radius: 10px;
 }
+
+#MenuListContainer{
+  height: 80%;
+  overflow-y: scroll;
+}

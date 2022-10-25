@@ -7,7 +7,7 @@ export const NewOrder = () => {
   return (
     <div className="container-xl">
       <div className="row">
-        <div className="col-8 p-2">
+        <div className="col-8 p-2" id="newOrderMenuList">
             <MenuList />
         </div>
         <div className="col-4 border-start">
