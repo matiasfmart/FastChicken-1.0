@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { cartContext } from '../context/Provider';
-import { Modal, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-
+import { ModalMenu } from './ModalMenu';
 export const Menu = ({menuData}) => {
   
-  const { addItemMenu, getItemsMenu } =  useContext(cartContext);
+  const { addItemMenu } =  useContext(cartContext);
   const [showModal, setShowModal] = useState(false);
 
-  const [valueDrink, setValueDrink] = useState([]);
-  const [valueDish, setValueDish] = useState([]);
+  const [valueDrink, setValueDrink] = useState("");
+  const [valueDish, setValueDish] = useState("");
 
-  const handleChangeDrink = (val) => {
-    setValueDrink(val);
+  function resetModalValues(){
+    setValueDrink("")
+    setValueDish("")
   }
-  const handleChangeDish = (val) => {
-    setValueDish(val);
-  }
+
+  const handleChangeDrink = (val) => setValueDrink(val)
+  const handleChangeDish = (val) => setValueDish(val)
 
   // useEffect(() => {
   //   console.log(valueDrink);
@@ -40,6 +40,7 @@ export const Menu = ({menuData}) => {
     }
     addItemMenu(item);
     handleClose();
+    resetModalValues();
   }
 
   return (
@@ -55,47 +56,19 @@ export const Menu = ({menuData}) => {
           </div>
       </button>
 
-      <Modal show={showModal} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{menuData.name}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className='p-4'>
-            <div className='row mb-4'>
-              <h2 className='mb-4'>Bebida</h2>
-              <ToggleButtonGroup type="radio" name="optionsDrink" value={valueDrink} onChange={handleChangeDrink}>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-1" value={"Coca"}>
-                  <h5 className='title-menu'>Coca</h5>
-                </ToggleButton>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-2" value={"Sprite"}>
-                    <h5 className='title-menu'>Sprite</h5>
-                </ToggleButton>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-3" value={"Fanta"}>
-                    <h5 className='title-menu'>Fanta</h5>
-                </ToggleButton>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-4" value={"Paso toros"}>
-                    <h5 className='title-menu'>Paso</h5>
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </div>
-
-            <div className='row'>
-              <h2 className='mb-4'>Guarnicion</h2>
-              <ToggleButtonGroup type="radio" name="optionsDish" value={valueDish} onChange={handleChangeDish}>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-5" value={"Arroz"}>
-                  <h5 className='title-menu'>Arroz</h5>
-                </ToggleButton>
-                <ToggleButton className="mx-1 py-2" id="tbg-radio-6" value={"Ensalada"}>
-                    <h5 className='title-menu'>Ensalada</h5>
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </div>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-            <Button variant="primary" onClick={addItem}>Agregar</Button>
-          </Modal.Footer>
-      </Modal>
-    </div> 
+      {
+        showModal &&
+          <ModalMenu
+            addItem={addItem}
+            handleClose={handleClose}
+            handleChangeDrink={handleChangeDrink}
+            handleChangeDish={handleChangeDish}
+            showModal={showModal}
+            valueDish={valueDish}
+            valueDrink={valueDrink}
+            item={menuData}
+          />
+      }
+    </div>
   )
 }

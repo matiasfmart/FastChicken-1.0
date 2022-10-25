@@ -5,7 +5,7 @@ import { OrderDetail } from "./OrderDetail";
 export const NewOrder = () => {
 
   return (
-    <div className="container-fluid">
+    <div className="container-xl">
       <div className="row">
         <div className="col-8 p-2">
             <MenuList />

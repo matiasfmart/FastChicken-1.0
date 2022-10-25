@@ -805,6 +805,56 @@ const combos = [
         "count": 1
       }
     }
+  },
+  {
+    "id": 16,
+    "type": "ex",
+    "name": "Arroz",
+    "description": "Porcion de Arroz extra",
+    "price": 1000,
+    "stock": [
+      { "id": "ar" }
+    ]
+  },
+  {
+    "id": 17,
+    "type": "ex",
+    "name": "Papas",
+    "description": "Porcion de Papas extra",
+    "price": 1000,
+    "stock": [
+      { "id": "pa" }
+    ]
+  },
+  {
+    "id": 18,
+    "type": "ex",
+    "name": "Ensalada",
+    "description": "Porcion de ensalada extra",
+    "price": 1000,
+    "stock": [
+      { "id": "en" }
+    ]
+  },
+  {
+    "id": 19,
+    "type": "ex",
+    "name": "Gaseosa",
+    "description": "",
+    "price": 1000,
+    "stock": [
+      { "id": "cc" }
+    ]
+  },
+  {
+    "id": 20,
+    "type": "ex",
+    "name": "Pieza de Pollo",
+    "description": "Pieza de pollo extra",
+    "price": 1000,
+    "stock": [
+      { "id": "po" }
+    ]
   }
 ]
 

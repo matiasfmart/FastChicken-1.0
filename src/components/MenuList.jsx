@@ -25,13 +25,33 @@ export const MenuList = () => {
   
   return (
     <div className='container'>
-        <div className="row">
+        <div className="row mb-3"> 
+          <h2 className='mb-2'>Pollos</h2>
+          <hr className='mb-4'/>
           {
             menus.map((item) => (
-              <Menu menuData={item} key={item.name} />
+              item.type == "po" && <Menu menuData={item} key={item.name} />
+            ))
+          }
+        </div>
+        <div className="row mb-3"> 
+          <h2 className='mb-2'>Hamburguesas</h2>
+          <hr className='mb-4'/>
+          {
+            menus.map((item) => (
+              item.type == "bg" && <Menu menuData={item} key={item.name} />
+            ))
+          }
+        </div>
+        <div className="row mb-3"> 
+          <h2 className='mb-2'>Extras</h2>
+          <hr className='mb-4'/>
+          {
+            menus.map((item) => (
+              item.type == "ex" && <Menu menuData={item} key={item.name} />
             ))
           }
         </div>
     </div>
-  )
-}
+  );
+};
