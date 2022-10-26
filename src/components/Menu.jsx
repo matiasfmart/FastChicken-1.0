@@ -51,10 +51,10 @@ export const Menu = ({menuData}) => {
   }
 
   return (
-    <div className="col-md-4 mb-4">
-      <button className='btn-menu py-3 px-2 btn btn-outline-primary' type="button" onClick={handleShow}>
+    <div className="col-md-4 mb-3">
+      <button className='btn-menu py-3 px-2 btn btn-outline-primary shadow-sm rounded' type="button" onClick={handleShow}>
           <div className="container">
-            <h5 className='title-menu'>{menuData.name}</h5>
+            <h5 className='title-menu fw-semibold'>{menuData.name}</h5>
             <div className="row">
               <div className="col-12">
                 <h6 className='text-muted'><small>{menuData.description}</small></h6>

@@ -77,26 +77,26 @@ export const ItemDetail = ({orderItem}) => {
 
   return (
     <>
-      <li className="list-group-item px-0">
+      <li className="list-group-item px-0 my-1">
         <div className="d-flex flex-row justify-content-between align-items-center">
           <div className="container-fluid">
             <div className="row"><div className=""><label className="text-primary"><b>{orderItem.name}</b></label></div></div>
             <div className="row"><div className=""><label><b>${orderItem.price}</b></label></div></div>
           </div>
           <div className="container-fluid">
-            <div className="row justify-content-center">{orderItem.dish}</div>
-            <div className="row justify-content-center">{orderItem.drink}</div>
+            <div className="row justify-content-center text-center">{orderItem.dish}</div>
+            <div className="row justify-content-center text-center">{orderItem.drink}</div>
           </div>
           <div className="container-fluid d-flex justify-content-end">
             {
               (orderItem.type != "ex") || (orderItem.name == "Gaseosa") ?
-                <button className='btn btn-outline-success mx-1' onClick={modalUpdateItem}>
+                <button className='btn btn-success mx-1' onClick={modalUpdateItem}>
                   <i className="bi bi-pencil-square"></i>
                 </button>
                 :
                 <></>
             }
-              <button className='btn btn-outline-danger mx-1' onClick={deleteItemMenu}>
+              <button className='btn btn-danger mx-1' onClick={deleteItemMenu}>
                 <i className="bi bi-trash3"></i>
               </button>
           </div>

@@ -25,9 +25,8 @@ export const MenuList = () => {
   
   return (
     <div className='container' id="MenuListContainer">
-      <div className="row mb-3"> 
-        <h2 className='mb-2'>Pollos</h2>
-        <hr className='mb-4'/>
+      <div className="row mb-4 mx-2 p-3 shadow rounded bg-white"> 
+        <h4 className='mb-3 fw-bold'>Pollos</h4>
         {
           menus ? 
             menus.map((item) => (
@@ -39,9 +38,8 @@ export const MenuList = () => {
             </div>
         }
       </div>
-      <div className="row mb-3"> 
-        <h2 className='mb-2'>Hamburguesas</h2>
-        <hr className='mb-4'/>
+      <div className="row mb-3 mx-2 p-3 shadow rounded bg-white"> 
+        <h4 className='mb-3 fw-bold'>Hamburguesas</h4>
         {
           menus ? 
             menus.map((item) => (
@@ -53,9 +51,8 @@ export const MenuList = () => {
             </div>  
         }
       </div>
-      <div className="row mb-3"> 
-        <h2 className='mb-2'>Extras</h2>
-        <hr className='mb-4'/>
+      <div className="row mb-3 mx-2 p-3 shadow rounded bg-white"> 
+        <h4 className='mb-3 fw-bold'>Extras</h4>
         {
           menus ?
             menus.map((item) => (

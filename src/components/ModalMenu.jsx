@@ -10,39 +10,42 @@ export const ModalMenu =
   return (
     <Modal show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{item.name}</Modal.Title>
+        <Modal.Title className="lead">{item.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body className="p-4">
         <div className="row mb-4">
-          <h2 className="mb-4">Bebida</h2>
+          <h4 className="mb-3 fw-bold">Bebida</h4>
           <ToggleButtonGroup type="radio" name="optionsDrink" value={valueDrink} onChange={handleChangeDrink}>
-            <ToggleButton className="mx-1 py-2" id="tbg-radio-1" value={"Coca"}>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-1" variant="outline-primary" value={"Coca"}>
               <h5 className="title-menu">Coca</h5>
             </ToggleButton>
-            <ToggleButton className="mx-1 py-2" id="tbg-radio-2" value={"Sprite"}>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-2" variant="outline-primary" value={"Sprite"}>
               <h5 className="title-menu">Sprite</h5>
             </ToggleButton>
-            <ToggleButton className="mx-1 py-2" id="tbg-radio-3" value={"Fanta"}>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-3" variant="outline-primary" value={"Fanta"}>
               <h5 className="title-menu">Fanta</h5>
             </ToggleButton>
-            <ToggleButton className="mx-1 py-2" id="tbg-radio-4" value={"Paso toros"}>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-4" variant="outline-primary" value={"Paso toros"}>
               <h5 className="title-menu">Paso</h5>
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
         {
           item.type == "po" &&
-          <div className="row">
-            <h2 className="mb-4">Guarnicion</h2>
-            <ToggleButtonGroup type="radio" name="optionsDish" value={valueDish} onChange={handleChangeDish}>
-              <ToggleButton className="mx-1 py-2" id="tbg-radio-5" value={"Arroz"}>
-                <h5 className="title-menu">Arroz</h5>
-              </ToggleButton>
-              <ToggleButton className="mx-1 py-2" id="tbg-radio-6" value={"Ensalada"}>
-                <h5 className="title-menu">Ensalada</h5>
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </div>
+          <>
+            <hr/>
+            <div className="row">
+              <h4 className="mb-3 fw-bold">Guarnicion</h4>
+              <ToggleButtonGroup type="radio" name="optionsDish" value={valueDish} onChange={handleChangeDish}>
+                <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-5" variant="outline-primary" value={"Arroz"}>
+                  <h5 className="title-menu">Arroz</h5>
+                </ToggleButton>
+                <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-6" variant="outline-primary" value={"Ensalada"}>
+                  <h5 className="title-menu">Ensalada</h5>
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </div>
+          </>
         }
       </Modal.Body>
       <Modal.Footer>
