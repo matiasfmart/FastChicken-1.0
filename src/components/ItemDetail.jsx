@@ -79,7 +79,7 @@ export const ItemDetail = ({orderItem}) => {
     <>
       <li className="list-group-item px-0 my-1">
         <div className="row d-flex flex-row justify-content-between align-items-center">
-          <div className="col-4 d-flex">
+          <div className="col-5 d-flex">
             <div className="container-fluid">
               <div className="row">
                   <label className="text-primary"><b>{orderItem.name}</b></label>
@@ -97,7 +97,7 @@ export const ItemDetail = ({orderItem}) => {
               <label>{orderItem.drink}</label>
             </div>
           </div>
-          <div className="col-4 d-flex justify-content-end">
+          <div className="col-3 d-flex justify-content-end">
             {
               (orderItem.type != "ex") || (orderItem.name == "Gaseosa") ?
                 <button className='btn btn-success mx-1' onClick={modalUpdateItem}>

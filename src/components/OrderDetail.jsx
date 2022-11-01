@@ -24,13 +24,13 @@ export const OrderDetail = ({disableBtn}) => {
                   {orderItems.map((item) => ( <ItemDetail orderItem={item} key={item.id}/> ))}
                 </ul>
               </div>
-              <div className="row mb-3 rounded">
+              <div className="row mb-3 border rounded shadow-sm">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="p-2">
-                    <h4 className="fw-bold text-success">Total</h4>
+                    <h4 className="fw-bold text-uppercase text-success">Total</h4>
                   </div>
                   <div className="p-2">
-                    <h4 className="fw-bold text-success">${totalOrder()}</h4>
+                    <h4 className="fw-bold text-uppercase text-success">${totalOrder()}</h4>
                   </div>
                 </div>
               </div>
