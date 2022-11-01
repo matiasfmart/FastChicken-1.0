@@ -24,7 +24,7 @@ export const MenuList = () => {
   }, [])
   
   return (
-    <div className='container' id="MenuListContainer">
+    <div className='container' id="menuListContainer">
       <div className="row mb-4 mx-2 p-3 shadow rounded bg-white"> 
         <h4 className='mb-3 fw-bold'>Pollos</h4>
         {

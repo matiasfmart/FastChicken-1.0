@@ -41,12 +41,16 @@ function Provider({ children }) {
     return orderItems.reduce((a, b) => a + b.price, 0);
   }
 
+  function clearItems() {
+    setOrderItems([]);
+  }
+
   // function exist(id) {
   //   return orderItems.some((e) => e.id === id);
   // }
 
   return (
-    <cartContext.Provider value={{ addItemMenu, totalOrder, deleteItem, editItem, orderItems }}>
+    <cartContext.Provider value={{ addItemMenu, totalOrder, deleteItem, editItem, orderItems, clearItems }}>
       {children}
     </cartContext.Provider>
   );

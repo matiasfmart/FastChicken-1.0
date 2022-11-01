@@ -1,46 +1,49 @@
 import React, { useContext } from "react";
 import { ItemDetail } from "./ItemDetail";
 import { cartContext } from "../context/Provider";
+import { useEffect } from "react";
 
-export const OrderDetail = () => {
-  const { orderItems, totalOrder } = useContext(cartContext);
+export const OrderDetail = ({disableBtn}) => {
+  const { orderItems, totalOrder, clearItems } = useContext(cartContext);
 
-  console.log(orderItems)
-
+  useEffect(()=>{
+    orderItems.length ? disableBtn(false) : disableBtn(true);
+  })
+  
   return (
-    <>
-      <div className="container order-detail p-4 m-2 shadow rounded bg-white">
+    <div className="mt-3">
+      <div className="col-12 p-4 shadow rounded bg-white">
         <div className="row mb-3">
           <h2 className="fw-bold">Pedido</h2>
         </div>
         {
           orderItems.length ?
             <>
-              <div className="row mb-3">
+              <div className="row mb-2" id="orderDetails">
                 <ul className="list-group list-group-flush">
                   {orderItems.map((item) => ( <ItemDetail orderItem={item} key={item.id}/> ))}
                 </ul>
               </div>
-              <div className="row">
+              <div className="row mb-3 rounded">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="p-2">
-                    <h4 className="fw-bold">Total</h4>
+                    <h4 className="fw-bold text-success">Total</h4>
                   </div>
                   <div className="p-2">
-                    <h4 className="fw-bold">${totalOrder()}</h4>
+                    <h4 className="fw-bold text-success">${totalOrder()}</h4>
                   </div>
                 </div>
-                <button type="button" className="btn btn-primary btn-lg fw-semibold">
-                  Terminar Pedido
-                </button>
+              </div>
+              <div className="row justify-content-end mb-1">
+                <button className='btn btn-danger col-5 p-2 lead fw-bold' onClick={clearItems}>Eliminar Todo<i class="mx-1 bi bi-trash3"></i></button>
               </div>
             </>
           :
-          <div className="row mb-3">
+          <div className="row mb-3" id="noHayItems">
             <p className="lea text-muted text-center">No hay items</p>
           </div>
         }
       </div>
-    </>
+    </div>
   );
 };

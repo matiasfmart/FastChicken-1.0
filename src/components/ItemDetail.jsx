@@ -78,16 +78,26 @@ export const ItemDetail = ({orderItem}) => {
   return (
     <>
       <li className="list-group-item px-0 my-1">
-        <div className="d-flex flex-row justify-content-between align-items-center">
-          <div className="container-fluid">
-            <div className="row"><div className=""><label className="text-primary"><b>{orderItem.name}</b></label></div></div>
-            <div className="row"><div className=""><label><b>${orderItem.price}</b></label></div></div>
+        <div className="row d-flex flex-row justify-content-between align-items-center">
+          <div className="col-4 d-flex">
+            <div className="container-fluid">
+              <div className="row">
+                  <label className="text-primary"><b>{orderItem.name}</b></label>
+              </div>
+              <div className="row">
+                  <label><b>${orderItem.price}</b></label>
+              </div>
+            </div>
           </div>
-          <div className="container-fluid">
-            <div className="row justify-content-center text-center">{orderItem.dish}</div>
-            <div className="row justify-content-center text-center">{orderItem.drink}</div>
+          <div className="col-4">
+            <div className="row justify-content-center">
+              <label>{orderItem.dish}</label>
+            </div>
+            <div className="row justify-content-center">
+              <label>{orderItem.drink}</label>
+            </div>
           </div>
-          <div className="container-fluid d-flex justify-content-end">
+          <div className="col-4 d-flex justify-content-end">
             {
               (orderItem.type != "ex") || (orderItem.name == "Gaseosa") ?
                 <button className='btn btn-success mx-1' onClick={modalUpdateItem}>
@@ -97,7 +107,7 @@ export const ItemDetail = ({orderItem}) => {
                 <></>
             }
               <button className='btn btn-danger mx-1' onClick={deleteItemMenu}>
-                <i className="bi bi-trash3"></i>
+                <i className="bi bi-x-lg"></i>
               </button>
           </div>
         </div>

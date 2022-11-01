@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Provider from './context/Provider';
 import { MenuList } from "../src/components/MenuList";
 import { OrderDetail } from "../src/components/OrderDetail";
 
-function App() {  
+function App() {
+
+  const [disableBtn, setDisableBtn] = useState(true);
+
   return (
     <Provider>
       <div className="container-xl">
@@ -16,7 +19,14 @@ function App() {
             <MenuList />
           </div>
           <div className="col-4">
-            <OrderDetail />
+            <div className='row' id='rowOrder'>
+              <OrderDetail disableBtn={setDisableBtn}/>
+              <div className='container'>
+                <button type="button" id="btnFinishOrder" disabled={disableBtn} className="col-12 p-3 btn btn-primary btn-lg fw-semibold mb-4">
+                  Terminar Pedido
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

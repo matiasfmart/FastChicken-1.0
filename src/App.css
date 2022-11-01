@@ -51,7 +51,26 @@
   border-radius: 10px;
 }
 
-#MenuListContainer{
+#rowOrder{
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#rowOrder button{
+}
+
+#menuListContainer{
   height: 87vh;
+  overflow-y: scroll;
+}
+
+#noHayItems{
+  height: 67vh;
+}
+
+#orderDetails{
+  height: 54vh;
   overflow-y: scroll;
 }
