@@ -8,14 +8,17 @@ export const Menu = ({menuData}) => {
 
   const [valueDrink, setValueDrink] = useState("");
   const [valueDish, setValueDish] = useState("");
+  const [valueIce, setValueIce] = useState("");
 
   function resetModalValues(){
     setValueDrink("")
     setValueDish("")
+    setValueIce("");
   }
 
   const handleChangeDrink = (val) => setValueDrink(val)
   const handleChangeDish = (val) => setValueDish(val)
+  const handleChangeIce = (val) => setValueIce(val)
 
   function handleClose(){
      setShowModal(false);
@@ -43,6 +46,7 @@ export const Menu = ({menuData}) => {
       "name": menuData.name,
       "dish": valueDish,
       "drink": valueDrink,
+      "withIce": valueIce,
       "price": menuData.price
     }
     addItemMenu(item);
@@ -68,9 +72,11 @@ export const Menu = ({menuData}) => {
         handleClose={handleClose}
         handleChangeDrink={handleChangeDrink}
         handleChangeDish={handleChangeDish}
+        handleChangeIce={handleChangeIce}
         showModal={showModal}
         valueDish={valueDish}
         valueDrink={valueDrink}
+        valueIce={valueIce}
         item={menuData}
       />
     </div>

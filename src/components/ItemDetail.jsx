@@ -10,16 +10,19 @@ export const ItemDetail = ({orderItem}) => {
   const [showModal, setShowModal] = useState(false);
   const [valueDrink, setValueDrink] = useState();
   const [valueDish, setValueDish] = useState();
+  const [valueIce, setValueIce] = useState();
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   const handleChangeDrink = (val) => setValueDrink(val);
   const handleChangeDish = (val) => setValueDish(val);
+  const handleChangeIce = (val) => setValueIce(val);
 
   function resetModalValues(){
-    setValueDrink("")
-    setValueDish("")
+    setValueDrink("");
+    setValueDish("");
+    setValueIce("");
   }
 
   function addItemEdit(){
@@ -32,6 +35,7 @@ export const ItemDetail = ({orderItem}) => {
         "name": orderItem.name,
         "dish": valueDish,
         "drink": valueDrink,
+        "withIce": valueIce,
         "price": orderItem.price
       }
       editItem(itemPo);
@@ -43,6 +47,7 @@ export const ItemDetail = ({orderItem}) => {
         "type": orderItem.type,
         "name": orderItem.name,
         "drink": valueDrink,
+        "withIce": valueIce,
         "price": orderItem.price
       }
       editItem(itemBg);
@@ -54,6 +59,7 @@ export const ItemDetail = ({orderItem}) => {
         "type": orderItem.type,
         "name": orderItem.name,
         "drink": valueDrink,
+        "withIce": valueIce,
         "price": orderItem.price
       }
       editItem(itemDr);
@@ -66,6 +72,7 @@ export const ItemDetail = ({orderItem}) => {
     if((orderItem.type != "ex") || (orderItem.name == "Gaseosa")){
       setValueDish(orderItem.dish);
       setValueDrink(orderItem.drink);
+      setValueIce(orderItem.withIce);
       handleShow();
     }
   }
@@ -117,9 +124,11 @@ export const ItemDetail = ({orderItem}) => {
         handleClose={handleClose}
         handleChangeDrink={handleChangeDrink}
         handleChangeDish={handleChangeDish}
+        handleChangeIce={handleChangeIce}
         showModal={showModal}
         valueDish={valueDish}
         valueDrink={valueDrink}
+        valueIce={valueIce}
         item={orderItem}
       />
     </>

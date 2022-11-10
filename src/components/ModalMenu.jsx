@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
 export const ModalMenu = 
     (
-        { handleClose, handleChangeDrink, handleChangeDish, addItem,
-        showModal, valueDrink, valueDish, item }
+        { handleClose, handleChangeDrink, handleChangeDish, handleChangeIce, addItem,
+        showModal, valueDrink, valueDish, valueIce, item }
     ) => 
 {
+
+  const [disableAddBtn, setDisableAddBtn] = useState(false);
+
+  useEffect(()=>{
+    console.log(valueDish, valueDrink, valueIce);
+    (valueDish && valueDrink && valueIce) ? setDisableAddBtn(true) : setDisableAddBtn(false);
+  })
+
   return (
     <Modal show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -25,8 +33,18 @@ export const ModalMenu =
             <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-3" variant="outline-primary" value={"Fanta"}>
               <h5 className="title-menu">Fanta</h5>
             </ToggleButton>
-            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-4" variant="outline-primary" value={"Paso toros"}>
-              <h5 className="title-menu">Paso</h5>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-4" variant="outline-primary" value={"Jugo"}>
+              <h5 className="title-menu">Jugo</h5>
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+        <div className="row mb-4">
+          <ToggleButtonGroup type="radio" name="optionsIce" value={valueIce} onChange={handleChangeIce}>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-8" variant="outline-primary" value={"conHielo"}>
+              <h5 className="title-menu">Con Hielo</h5>
+            </ToggleButton>
+            <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-9" variant="outline-primary" value={"sinHielo"}>
+              <h5 className="title-menu">Sin hielo</h5>
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -43,6 +61,9 @@ export const ModalMenu =
                 <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-6" variant="outline-primary" value={"Ensalada"}>
                   <h5 className="title-menu">Ensalada</h5>
                 </ToggleButton>
+                <ToggleButton className="mx-1 py-2 shadow-sm rounded" id="tbg-radio-7" variant="outline-primary" value={"Papasx2"}>
+                  <h5 className="title-menu">Papas x2</h5>
+                </ToggleButton>
               </ToggleButtonGroup>
             </div>
           </>
@@ -52,7 +73,7 @@ export const ModalMenu =
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>
-        <Button variant="primary" onClick={addItem}>
+        <Button variant="primary" onClick={addItem} disabled={disableAddBtn}>
           Agregar
         </Button>
       </Modal.Footer>

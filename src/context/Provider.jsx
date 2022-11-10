@@ -18,6 +18,7 @@ function Provider({ children }) {
         type: item.type,
         drink: item.drink,
         dish: item.dish,
+        withIce: item.withIce,
         price: item.price,
       },
     ]);
